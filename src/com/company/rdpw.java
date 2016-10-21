@@ -10,19 +10,20 @@ public class rdpw {
     {
 
         userName = u;
-        password();
+        pw = password();
 
     }
 
-    private void password()//void means doesn't return nothing
+    private String password()//void means doesn't return nothing
     {
         pw = "";//will change later to random
-        String dataBase = "ABCabc!@#123";
-        for(int i = 0; i < 8; i++)
+        String dataBase = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#1234567890";
+        for(int i = 0; i < 32; i++)
         {
             int rd = (int)(Math.random() * dataBase.length());//random always returns btw 0 - 1
             pw = pw + dataBase.substring(rd, (rd+1));
         }
+        return pw;
 
     }
 
